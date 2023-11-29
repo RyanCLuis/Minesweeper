@@ -25,3 +25,4 @@
 
 
 /*----- functions -----*/
+console.log("JS is connected to my HTML!")
