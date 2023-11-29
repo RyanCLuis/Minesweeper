@@ -9,3 +9,6 @@ As a User, i want to...
 - have a option to "flag a square" so i dont click on it
 - see a square i clicked on and see if there is an ant next to it
 - have the ablity to play again
+![wireframe pt 1](https://github.com/RyanCLuis/Minesweeper/assets/150068816/6e47711d-db11-4f70-9fa1-a2fb3024ef4a)
+![wireframe pt 2](https://github.com/RyanCLuis/Minesweeper/assets/150068816/22cac84a-71ac-4fe9-a176-be3076f1602c)
+![wireframe pt 3](https://github.com/RyanCLuis/Minesweeper/assets/150068816/d0e456c5-38d6-4f2a-a081-0b1280e44478)
