@@ -1,4 +1,4 @@
-#MINESWEEPER#
+# MINESWEEPER
 
 This game will be close to you typical minesweeper, where you mark the boxes if you think there is an ant and select boxes to see if there are ants near by or "flood" boxes around for your next hint.
 
