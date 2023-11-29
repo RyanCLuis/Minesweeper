@@ -42,6 +42,10 @@ h1 {
     background-color: #ff83ff;
 }
 
+#tiles div:active {
+    background-color: red; /* Change the color when ready */
+}
+
 button {
     margin-top: 3vmin;
     padding: 2vmin;
@@ -50,6 +54,7 @@ button {
     color: black;
     border: 0.4vmin solid;
     cursor: pointer;
+    border-radius: 40%;
 }
 
 button:hover {
