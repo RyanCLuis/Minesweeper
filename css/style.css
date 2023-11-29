@@ -1,18 +1,32 @@
- * {
-    box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:darkslateblue;
+    text-align: center;
 }
 
-body {
+#tiles {
+    height: 400px;
+    width: 400px;
+    border: 10px solid black;
+    background-color: lightblue;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    cursor: crosshair;
+}
+
+/* added a div to see what my boxes would look like */
+/* simple math, if you are trying to get the width and height of the boxes its 400 divided by 8 to get 50px. But you need to include the boarder which is 1px around */
+#tiles div {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgb(158, 77, 7);
+
+    /* adding text style when you reveal the box */
+    font-size: 30px;
+    display: flex;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-    letter-spacing: .02vmin;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color:darkslateblue
+    align-items: center;
 }
 
 h1 {
@@ -22,28 +36,27 @@ h1 {
     letter-spacing: 0.5vmin;
 }
 
-#tiles {
-    display: grid;
-    grid-template-columns: repeat(8, 2.5vmin); 
-    grid-template-rows: repeat(8, 2.5vmin); 
-    gap: 0.13vmin; 
-    border: 0.3vmin solid;
-    cursor: crosshair;
-}
-
-#tiles>div {
-    width: 2.5vmin; 
-    height: 2.5vmin; 
-    background-color: #3498db;
-    border: 1px solid #2980b9;
-}
-
 #tiles>div:hover {
     background-color: #ff83ff;
 }
 
-#tiles div:active {
-    background-color: red; /* Change the color when ready */
+/* needs a class to show the tile has already been clicked */
+
+.tile-clicked {
+    background-color: #099;
+}
+
+/* need to classify "hint" with colors */
+.only {
+    color: darkmagenta;
+}
+
+.two {
+    color: #00004f;
+}
+
+.three {
+    color: darkred;
 }
 
 button {
@@ -55,13 +68,15 @@ button {
     border: 0.4vmin solid;
     cursor: pointer;
     border-radius: 40%;
+
 }
 
 button:hover {
     background-color: #27ae60;
+
 }
 
 button>img {
     height: 5vmin;
     width: 5vmin;
-}
+} 
