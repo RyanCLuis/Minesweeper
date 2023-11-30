@@ -16,10 +16,10 @@ body {
 }
 
 /* added a div to see what my boxes would look like */
-/* simple math, if you are trying to get the width and height of the boxes its 400 divided by 8 to get 50px. But you need to include the boarder which is 1px around */
+/* was doing math with the pixels but didnt look right, so i went with % to get the grid to fill the container*/
 #tiles div {
-    width: 48px;
-    height: 48px;
+    width: 11.87%;
+    height: 11.87%;
     border: 1px solid rgb(158, 77, 7);
 
     /* adding text style when you reveal the box */
