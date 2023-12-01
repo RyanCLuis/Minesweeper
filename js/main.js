@@ -15,7 +15,7 @@
 let board = []
 let rows = 8
 let columns = 8
-let minds = 8
+let minds = 6
 // this will tell us the loction of the minds ex. 2-4, 0-1, etc
 let mindsLocation = []
 let tilesClicked = 0
@@ -33,9 +33,15 @@ window.onload = function() {
     renderBoard()
 }
 
+// we are setting specific locations for now, until the end to where we can randomize them!
+function setMinds() {
+    mindsLocation.push("2-2", "2-4", "0-0", "5-6", "3-4", "1-1")
+}
+
 function renderBoard() {
     document.getElementById("mind-count").innerText = minds
     document.getElementById("head").addEventListener("click", setHead)
+    setMinds()
     // populate my tiles using a for loop
     for (let r = 0;r < rows; r++) {
         let row = []
@@ -72,5 +78,14 @@ function tileClicked() {
         else if (tile.innerText === "🥴") {
             tile.innerText = ""
         }
+        // putting return so i dont hit a mind when I set a head
+        return
+    }
+
+    if (mindsLocation.includes(tile.id)) {
+        // using alert to test, will change later!
+        alert("Game Over!")
+        gameOver = true
+        return
     }
 }
