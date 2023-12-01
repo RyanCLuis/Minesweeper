@@ -47,35 +47,35 @@ h1 {
 }
 
 /* need to classify "hint" with colors, there could be up to 8 spaces where there could be minds! */
-.only {
+.m1 {
     color: darkmagenta;
 }
 
-.two {
+.m2 {
     color: #00004f;
 }
 
-.three {
+.m3 {
     color: darkred;
 }
 
-.four {
+.m4 {
     color:burlywood;
 }
 
-.five {
+.m5 {
     color:darkseagreen;
 }
 
-.six {
+.m6 {
     color: white;
 }
 
-.seven {
+.m7 {
     color: #7435d2;
 }
 
-.eight {
+.m8 {
     color: #82ff17;
 }
 

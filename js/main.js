@@ -108,6 +108,13 @@ function checkMinds(r, c) {
     if (r < 0 || r >= rows || c < 0 || c >+ columns) {
         return
     }
+    // if this line is true, it will not do the code below
+    if (board[r][c].classList.contains("tile-clicked")) {
+        return
+    }
+
+    board[r][c].classList.add("tile-clicked")
+
     let mindsFound = 0
     // checking the top 3 divs
     mindsFound += checkTile(r-1, c-1) // this is top left
@@ -123,7 +130,7 @@ function checkMinds(r, c) {
     // this is to add the "hint" to the tile if no minds are there and are nearby
     if (mindsFound > 0) {
         board[r][c].innerText = mindsFound
-        board[r][c].classList.add(`one${mindsFound}`)
+        board[r][c].classList.add(`m${mindsFound}`)
     }
     // setting up recursion(aka "flood effect")
     else {
