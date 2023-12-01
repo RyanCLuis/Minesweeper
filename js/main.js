@@ -71,6 +71,7 @@ function setHead() {
 
 function tileClicked() {
     let tile = this
+    // this is to place the "flag" on the tiles
     if (headEn) {
         if (tile.innerText === "") {
             tile.innerText = "🥴"
@@ -81,14 +82,19 @@ function tileClicked() {
         // putting return so i dont hit a mind when I set a head
         return
     }
-
+// this is if you hit the mine
     if (mindsLocation.includes(tile.id)) {
         // using alert to test, will change later!
-        alert("Game Over!")
+        // alert("Game Over!")
         gameOver = true
         revealMinds()
         return
     }
+// this is if we dont hit a mind, itll tell us how many are nearby
+    let divCoord = tile.id.split("-") // spliting "0-0" to (0, 0)
+    let r = parseInt(divCoord[0])
+    let c = parseInt(divCoord[1])
+    checkMinds(r, c)
 }
 
 function revealMinds() {
@@ -101,4 +107,37 @@ function revealMinds() {
             }
         }
     }
+}
+
+function checkMinds(r, c) {
+    if (r < 0 || r >= rows || c < 0 || c >+ columns) {
+        return
+    }
+    let mindsFound = 0
+    // checking the top 3 divs
+    mindsFound += checkTile(r-1, c-1) // this is top left
+    mindsFound += checkTile(r-1, c) // this is top 
+    mindsFound += checkTile(r-1, c+1) // this is top right
+    // checking left and right
+    mindsFound += checkTile(r, c-1) // this is left
+    mindsFound += checkTile(r, c+1) // this is right
+    // this is bottom
+    mindsFound += checkTile(r+1, c-1) // this is bottom left
+    mindsFound += checkTile(r+1, c) // this is bottom 
+    mindsFound += checkTile(r+1, c+1) // this is bottom right
+    // this is to add the "hint" to the tile if no minds are there and are nearby
+    if (mindsFound > 0) {
+        board[r][c].innerText = mindsFound
+        board[r][c].classList.add(`one${mindsFound}`)
+    }
+}
+
+function checkTile(r, c) {
+    if (r < 0 || r >= rows || c < 0 || c >+ columns) {
+        return 0
+    }
+    if (mindsLocation.includes(`${r}-${c}`)) {
+        return 1
+    }
+    return 0
 }
