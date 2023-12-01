@@ -86,6 +86,19 @@ function tileClicked() {
         // using alert to test, will change later!
         alert("Game Over!")
         gameOver = true
+        revealMinds()
         return
+    }
+}
+
+function revealMinds() {
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
+            let tile = board[r][c]
+            if (mindsLocation.includes(tile.id)) {
+                tile.innerText = "🧠"
+                tile.style.backgroundColor = "red"
+            }
+        }
     }
 }

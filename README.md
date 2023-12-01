@@ -19,3 +19,4 @@ As a User, i want to...
 
 ## Resources
 - 🥴 this is the image for the toggle "flag" option
+- 🧠 this is the emoji for the "bomb" 
