@@ -23,11 +23,6 @@ let tilesClicked = 0
 let headEn = false
 let gameOver = false
 
-// const messageEl = document.querySelector('h1')
-// const headButton = document.querySelector('#head')
-// const playAgainButton = document.querySelector('button')
-// const tiles = [...document.querySelectorAll('#tiles > div')]
-
 
 window.onload = function() {
     renderBoard()
@@ -129,6 +124,20 @@ function checkMinds(r, c) {
     if (mindsFound > 0) {
         board[r][c].innerText = mindsFound
         board[r][c].classList.add(`one${mindsFound}`)
+    }
+    // setting up recursion(aka "flood effect")
+    else {
+        // top 3
+        checkMinds(r-1, c-1) // top left
+        checkMinds(r-1, c) // top 
+        checkMinds(r-1, c+1) // top right
+        // checking left and right
+        checkMinds(r, c-1) // left
+        checkMinds(r, c+1) // right
+        // check bottom
+        checkMinds(r+1, c-1) // bottom left
+        checkMinds(r-1, c) // bottom 
+        checkMinds(r+1, c+1) // bottom right
     }
 }
 
