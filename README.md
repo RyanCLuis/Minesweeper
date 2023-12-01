@@ -18,4 +18,4 @@ As a User, i want to...
 ![wireframe pt 3](https://github.com/RyanCLuis/Minesweeper/assets/150068816/d0e456c5-38d6-4f2a-a081-0b1280e44478)
 
 ## Resources
-- https://i.imgur.com/KS651NW.gif this is the image for the toggle "flag" option
+- 🥴 this is the image for the toggle "flag" option

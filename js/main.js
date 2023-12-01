@@ -35,6 +35,7 @@ window.onload = function() {
 
 function renderBoard() {
     document.getElementById("mind-count").innerText = minds
+    document.getElementById("head").addEventListener("click", setHead)
     // populate my tiles using a for loop
     for (let r = 0;r < rows; r++) {
         let row = []
@@ -42,6 +43,7 @@ function renderBoard() {
             // making a div tag in HTML
             let tile = document.createElement("div")
             tile.id = `${r}-${c}`
+            tile.addEventListener("click", tileClicked)
             document.getElementById("tiles").append(tile)
             row.push(tile)
         }
@@ -50,3 +52,25 @@ function renderBoard() {
     console.log(board)
 }
 
+function setHead() {
+    if (headEn) {
+        headEn = false
+        document.getElementById("head").style.backgroundColor = "#ff83ff"
+    } 
+    else {
+        headEn = true
+        document.getElementById("head").style.backgroundColor = "green"
+    }
+}
+
+function tileClicked() {
+    let tile = this
+    if (headEn) {
+        if (tile.innerText === "") {
+            tile.innerText = "🥴"
+        } 
+        else if (tile.innerText === "🥴") {
+            tile.innerText = ""
+        }
+    }
+}
