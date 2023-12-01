@@ -62,6 +62,11 @@ function setHead() {
 }
 
 function tileClicked() {
+    // this statement will happen === true then the rest wont happen
+    if (gameOver || this.classList.contains("tile-clicked")) {
+        return
+    }
+
     let tile = this
     // this is to place the "flag" on the tiles
     if (headEn) {
