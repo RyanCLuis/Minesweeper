@@ -146,7 +146,7 @@ function revealMinds() {
 }
 
 function checkMinds(r, c) {
-    if (r < 0 || r >= rows || c < 0 || c >+ columns) {
+    if (r < 0 || r >= rows || c < 0 || c >= columns) {
         return
     }
     // if this line is true, it will not do the code below
