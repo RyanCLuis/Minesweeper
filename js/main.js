@@ -22,22 +22,49 @@ let tilesClicked = 0
 // this is to tell us when the flag button is toggled 
 let headEn = false
 let gameOver = false
+const playAgainButton = document.getElementById('playAgain')
+playAgainButton.addEventListener('click', init)
 
     renderBoard()
+    init()
+
+function init() {
+    // Clear the existing board and reset variables
+    clearBoard()
+    renderBoard()
+}
+
+function clearBoard() {
+    document.getElementById("mind-count").innerText = minds
+    document.getElementById("head").style.backgroundColor = "#ff83ff"
+    tilesClicked = 0
+    gameOver = false
+
+    // Clear the tiles
+    const tilesContainer = document.getElementById("tiles")
+    while (tilesContainer.firstChild) {
+        tilesContainer.removeChild(tilesContainer.firstChild)
+    }
+
+    // Clear mindsLocation array
+    mindsLocation = []
+    board = []
+}
 
 // we are setting specific locations for now, until the end to where we can randomize them!
 function setMinds() {
+
     // mindsLocation.push("2-2", "2-4", "0-0", "5-6", "3-4", "1-1")
 
     let mindsLeft = minds;
     while (mindsLeft > 0) { 
-        let r = Math.floor(Math.random() * rows);
-        let c = Math.floor(Math.random() * columns);
-        let id = r.toString() + "-" + c.toString();
+        let r = Math.floor(Math.random() * rows)
+        let c = Math.floor(Math.random() * columns)
+        let id = r.toString() + "-" + c.toString()
 
         if (!mindsLocation.includes(id)) {
-            mindsLocation.push(id);
-            mindsLeft -= 1;
+            mindsLocation.push(id)
+            mindsLeft -= 1
         }
     }
 }
@@ -93,8 +120,6 @@ function tileClicked() {
     }
 // this is if you hit the mine
     if (mindsLocation.includes(tile.id)) {
-        // using alert to test, will change later!
-        // alert("Game Over!")
         gameOver = true
         revealMinds()
         return
