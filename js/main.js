@@ -15,7 +15,7 @@
 let board = []
 let rows = 8
 let columns = 8
-let minds = 8
+let minds = 2
 // this will tell us the loction of the minds ex. 2-4, 0-1, etc
 let mindsLocation = []
 let tilesClicked = 0
@@ -55,19 +55,19 @@ function clearBoard() {
 // we are setting specific locations for now, until the end to where we can randomize them!
 function setMinds() {
 
-    // mindsLocation.push("2-2", "2-4", "0-0", "5-6", "3-4", "1-1")
+    mindsLocation.push("0-0", "0-1")
 
-    let mindsLeft = minds;
-    while (mindsLeft > 0) { 
-        let r = Math.floor(Math.random() * rows)
-        let c = Math.floor(Math.random() * columns)
-        let id = r.toString() + "-" + c.toString()
+    // let mindsLeft = minds;
+    // while (mindsLeft > 0) { 
+    //     let r = Math.floor(Math.random() * rows)
+    //     let c = Math.floor(Math.random() * columns)
+    //     let id = r.toString() + "-" + c.toString()
 
-        if (!mindsLocation.includes(id)) {
-            mindsLocation.push(id)
-            mindsLeft -= 1
-        }
-    }
+    //     if (!mindsLocation.includes(id)) {
+    //         mindsLocation.push(id)
+    //         mindsLeft -= 1
+    //     }
+    // }
 }
 
 function renderBoard() {
@@ -103,7 +103,7 @@ function setHead() {
 
 function tileClicked() {
     // this statement will happen === true then the rest wont happen
-    if (gameOver || this.classList.contains("tile-clicked")) {
+    if (gameOver || this.classList.contains("tile-clicked") || this.innerText === "🥴") {
         return
     }
 
@@ -206,7 +206,7 @@ function checkMinds(r, c) {
 }
 
 function checkTile(r, c) {
-    if (r < 0 || r >= rows || c < 0 || c >+ columns) {
+    if (r < 0 || r >= rows || c < 0 || c >= columns) {
         return 0
     }
     if (mindsLocation.includes(`${r}-${c}`)) {
