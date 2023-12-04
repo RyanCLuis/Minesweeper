@@ -15,7 +15,7 @@
 let board = []
 let rows = 8
 let columns = 8
-let minds = 2
+let minds = 8
 // this will tell us the loction of the minds ex. 2-4, 0-1, etc
 let mindsLocation = []
 let tilesClicked = 0
@@ -55,19 +55,19 @@ function clearBoard() {
 // we are setting specific locations for now, until the end to where we can randomize them!
 function setMinds() {
 
-    mindsLocation.push("0-0", "0-1")
+    // mindsLocation.push("0-0", "0-1")
 
-    // let mindsLeft = minds;
-    // while (mindsLeft > 0) { 
-    //     let r = Math.floor(Math.random() * rows)
-    //     let c = Math.floor(Math.random() * columns)
-    //     let id = r.toString() + "-" + c.toString()
+    let mindsLeft = minds;
+    while (mindsLeft > 0) { 
+        let r = Math.floor(Math.random() * rows)
+        let c = Math.floor(Math.random() * columns)
+        let id = r.toString() + "-" + c.toString()
 
-    //     if (!mindsLocation.includes(id)) {
-    //         mindsLocation.push(id)
-    //         mindsLeft -= 1
-    //     }
-    // }
+        if (!mindsLocation.includes(id)) {
+            mindsLocation.push(id)
+            mindsLeft -= 1
+        }
+    }
 }
 
 function renderBoard() {
