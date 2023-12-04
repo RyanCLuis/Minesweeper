@@ -32,6 +32,7 @@ function init() {
     // Clear the existing board and reset variables
     clearBoard()
     renderBoard()
+    renderControl()
 }
 
 function clearBoard() {
@@ -115,17 +116,18 @@ function tileClicked() {
         else if (tile.innerText === "🥴") {
             tile.innerText = ""
         }
-        // putting return so i dont hit a mind when I set a head
+        // putting return so I don't hit a mind when I set a head
         return
     }
-// this is if you hit the mine
+    // this is if you hit the mine
     if (mindsLocation.includes(tile.id)) {
         gameOver = true
         revealMinds()
+        renderControl(); // Move renderControl call here
         return
     }
-// this is if we dont hit a mind, itll tell us how many are nearby
-    let divCoord = tile.id.split("-") // spliting "0-0" to [0,0]
+    // this is if we don't hit a mind, it'll tell us how many are nearby
+    let divCoord = tile.id.split("-") // splitting "0-0" to [0,0]
     let r = parseInt(divCoord[0])
     let c = parseInt(divCoord[1])
     checkMinds(r, c)
@@ -211,4 +213,8 @@ function checkTile(r, c) {
         return 1
     }
     return 0
+}
+
+function renderControl() {
+    playAgainButton.style.visibility = gameOver ? 'visible' : 'hidden'
 }
