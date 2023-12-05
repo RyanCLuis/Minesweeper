@@ -55,14 +55,13 @@ function clearBoard() {
 // we are setting specific locations for now, until the end to where we can randomize them!
 function setMinds() {
 
-    // mindsLocation.push("0-0", "0-1")
+    // mindsLocation.push("0-0", "0-1") used this to test out my game and if you wanna know certain locations!
 
     let mindsLeft = minds;
     while (mindsLeft > 0) { 
         let r = Math.floor(Math.random() * rows)
         let c = Math.floor(Math.random() * columns)
         let id = r.toString() + "-" + c.toString()
-
         if (!mindsLocation.includes(id)) {
             mindsLocation.push(id)
             mindsLeft -= 1
@@ -87,7 +86,6 @@ function renderBoard() {
         }
         board.push(row)
     }
-    // console.log(board)
 }
 
 function setHead() {
