@@ -58,4 +58,4 @@ ___
 
 ## Acknowledgment
 #### My mom
-- When i was trying to explain to her what ill be making for my first project, she never heard of the game minesweeper. She then asked me did i say minesweeper or mindsweeper. She thought it would be halarious to make mindsweeper and not to "Blow your Mind" and thus how i came to the theme of Mindsweeper.
+- When i was trying to explain to her what ill be making for my first project, she never heard of the game minesweeper. She then asked me did i say minesweeper or mindsweeper. She thought it would be hilarious to make mindsweeper and not to "Blow your Mind" and thus how i came to the theme of Mindsweeper.
