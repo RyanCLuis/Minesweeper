@@ -62,6 +62,7 @@ function setMinds() {
         let r = Math.floor(Math.random() * rows)
         let c = Math.floor(Math.random() * columns)
         let id = r.toString() + "-" + c.toString()
+
         if (!mindsLocation.includes(id)) {
             mindsLocation.push(id)
             mindsLeft -= 1
@@ -100,21 +101,24 @@ function setHead() {
 }
 
 function tileClicked() {
+    let tile = this
     // this statement will happen === true then the rest wont happen
-    if (gameOver || this.classList.contains("tile-clicked") || this.innerText === "🥴") {
+    if (gameOver || this.classList.contains("tile-clicked")) {
         return
     }
 
-    let tile = this
     // this is to place the "flag" on the tiles
     if (headEn) {
-        if (tile.innerText === "") {
-            tile.innerText = "🥴"
-        } 
-        else if (tile.innerText === "🥴") {
+        if (tile.innerText === "🥴") {
             tile.innerText = ""
+        } 
+        else if (tile.innerText === "") {
+            tile.innerText = "🥴"
         }
         // putting return so I don't hit a mind when I set a head
+        return
+    }
+    if (tile.innerText === "🥴") {
         return
     }
     // this is if you hit the mine
@@ -214,5 +218,5 @@ function checkTile(r, c) {
 }
 
 function renderControl() {
-    playAgainButton.style.visibility = gameOver ? 'visible' : 'hidden'
+    playAgainButton.innerText = gameOver ? 'Game Over... Try again?' : 'Reset'
 }
