@@ -21,11 +21,12 @@ ___
 ___
 
 ## ScreenShots
-![Game Startup](image.png)
-![Flooding Effect](image-1.png)
-![Head Toggle Button](image-2.png)
-![Game Over](image-3.png)
-![You won!](image-4.png)
+![Onload](Img/Onload.png)
+![FloodEffect](Img/FloodEffect.png)
+![HeadButton](Img/Head Button.png)
+![GamOver](Img/GameOver.png)
+![YouWon](Img/you won.png)
+
 ___
 
 ## Code Used
