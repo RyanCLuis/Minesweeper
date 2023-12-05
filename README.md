@@ -23,9 +23,9 @@ ___
 ## ScreenShots
 ![Onload](Img/Onload.png)
 ![FloodEffect](Img/FloodEffect.png)
-![HeadButton](Img/Head Button.png)
+![HeadButton](Img/headButton.png)
 ![GamOver](Img/GameOver.png)
-![YouWon](Img/you won.png)
+![YouWon](Img/youWon.png)
 
 ___
 
