@@ -226,8 +226,11 @@ function renderControl() {
 
 // this function allows audio to play wile clicking tiles
 function playMusic () {
-    let tile = event.target
-    if (tile.innerText === "🥴") {}
+    let tile = event.target // gets selected tile
+    // checkes to see if head emoji is selected
+    if (tile.innerText === "🥴") {
+        return
+    }
     let audio = new Audio("soundEffects/gun.mp3")
     audio.play()
 }
