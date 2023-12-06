@@ -145,6 +145,7 @@ function revealMinds() {
             if (mindsLocation.includes(tile.id)) {
                 tile.innerText = "🧠"
                 tile.style.backgroundColor = "red"
+                playBrainAudio()
             }
         }
     }
@@ -226,18 +227,20 @@ function renderControl() {
 
 // this function allows audio to play wile clicking tiles
 function playMusic () {
+    if (gameOver) {
+        return
+    }
     let tile = event.target // gets selected tile
     // checkes to see if head emoji is selected
     if (tile.innerText === "🥴") {
-        return
-    }
-    if (tile.innerText === "🧠") {
-        let audio = new Audio("soundEffects/splat.mp3")
-        audio.play()
-    } if (gameOver) {
         return
     } else {
         let audio = new Audio("soundEffects/gun.mp3")
         audio.play()
     }
+}
+
+function playBrainAudio() {
+    let audio = new Audio("soundEffects/splat.mp3")
+    audio.play()
 }
