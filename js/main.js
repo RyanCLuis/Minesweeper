@@ -234,6 +234,8 @@ function playMusic () {
     if (tile.innerText === "🧠") {
         let audio = new Audio("soundEffects/splat.mp3")
         audio.play()
+    } if (gameOver) {
+        return
     } else {
         let audio = new Audio("soundEffects/gun.mp3")
         audio.play()
