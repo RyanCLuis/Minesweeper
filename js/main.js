@@ -231,6 +231,11 @@ function playMusic () {
     if (tile.innerText === "🥴") {
         return
     }
-    let audio = new Audio("soundEffects/gun.mp3")
-    audio.play()
+    if (tile.innerText === "🧠") {
+        let audio = new Audio("soundEffects/splat.mp3")
+        audio.play()
+    } else {
+        let audio = new Audio("soundEffects/gun.mp3")
+        audio.play()
+    }
 }
