@@ -82,6 +82,8 @@ function renderBoard() {
             let tile = document.createElement("div")
             tile.id = `${r}-${c}`
             tile.addEventListener("click", tileClicked)
+            // this is an event listener to play music on tile click
+            tile.addEventListener("click", playMusic)
             document.getElementById("tiles").append(tile)
             row.push(tile)
         }
@@ -118,6 +120,7 @@ function tileClicked() {
         // putting return so I don't hit a mind when I set a head
         return
     }
+    // this if statement is so you can remove the 🥴
     if (tile.innerText === "🥴") {
         return
     }
@@ -219,4 +222,12 @@ function checkTile(r, c) {
 
 function renderControl() {
     playAgainButton.innerText = gameOver ? 'Game Over... Try again?' : 'Reset'
+}
+
+// this function allows audio to play wile clicking tiles
+function playMusic () {
+    let tile = event.target
+    if (tile.innerText === "🥴") {}
+    let audio = new Audio("soundEffects/gun.mp3")
+    audio.play()
 }
