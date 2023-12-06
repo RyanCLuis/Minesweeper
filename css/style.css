@@ -18,8 +18,8 @@ body {
 /* added a div to see what my boxes would look like */
 /* was doing math with the pixels but didnt look right, so i went with % to get the grid to fill the container*/
 #tiles div {
-    width: 11.87%;
-    height: 11.87%;
+    width: 12%;
+    height: 12%;
     border: 1px solid rgb(158, 77, 7);
 
     /* adding text style when you reveal the box */
@@ -79,6 +79,12 @@ h1 {
     color: #82ff17;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vmin;
+}
+
 button {
     margin-top: 3vmin;
     padding: 2vmin;
@@ -88,5 +94,4 @@ button {
     border: 0.4vmin solid;
     cursor: pointer;
     border-radius: 40%;
-
 }
