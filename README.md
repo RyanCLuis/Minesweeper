@@ -1,5 +1,7 @@
 # MINDSWEEPER
 
+ryancluis.github.io/Minesweeper/
+
 ## Overview
 This game will be close to you typical minesweeper, where you mark the boxes if you think there is a mind and select boxes to see if there are minds near by or "flood" boxes around for your next hint. How the game works is the computer will generate 8 random squares to have "minds" behind them. You will click a random square to see whats behind that swuare. When revealed you will loose the game by hitting a mind, have nothing behind that square and reval everything around there until you see a number hint, or reval a number and click somewhere else. The goal in this game is you save all your "minds" and dont blow it!
 ___
@@ -56,6 +58,11 @@ ___
 - 🥴 this is the image for the toggle "flag" option
 - 🧠 this is the emoji for the "bomb" 
 
+## Future Updates
+- Have the ability to input the amount of minds.
+- Make visual effects of minds being squished!
+- Have victory audio play when game won/losing audio for game over.
+
 ## Acknowledgment
 #### My mom
-- When i was trying to explain to her what ill be making for my first project, she never heard of the game minesweeper. She then asked me did i say minesweeper or mindsweeper. She thought it would be hilarious to make mindsweeper and not to "Blow your Mind" and thus how i came to the theme of Mindsweeper.
+- When i was trying to explain to her what ill be making for my first project, she never heard of the game minesweeper. After roughly 5 mins, she then asked me did i say minesweeper or mindsweeper. She thought it would be hilarious to make mindsweeper and not to "Blow your Mind" and thus how i came to the theme of Mindsweeper.
